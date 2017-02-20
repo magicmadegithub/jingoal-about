@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorDivider">#d9d9d9</color>
+    <color name="vcard_sex_fail_start_color">#B6BABF</color>
+    <color name="vcard_sex_fail_end_color">#8A8F99</color>
+    <color name="vcard_femal_start_color">#FFA585</color>
+    <color name="vcard_mal_start_color">#47D4FF</color>
+    <color name="vcard_femal_end_color">#FF4B70</color>
+    <color name="vcard_mal_end_color">#2299EE</color>
+    <color name="vcard_qr_add_null_color">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#ededed</color>
+</resources>
