@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.magic.yilaizhuru.R;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
     Toolbar toolbar;
     @BindView(R.id.collapsingToolbarLayout)
     CollapsingToolbarLayout mCollap;
+    @BindView(R.id.iv_point)
+    ImageView mIvPoint;
 
     private VcardAdapter mAdapter;
     private List<ViewItem> models = new ArrayList<>();
@@ -127,8 +130,21 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
             return;
         }
         if (verticalOffset == 0) {
+            //展开状态
+            Log.e("Magic", "--展开状态--" + verticalOffset);
             ptrFrameLayout.setEnabled(true);
+            toolbar.setNavigationIcon(R.mipmap.arrowback);
+            mIvPoint.setBackgroundResource(R.mipmap.ic_point);
+        } else if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
+            //折叠状态
+            Log.e("Magic", "--折叠状态--" + verticalOffset);
+            ptrFrameLayout.setEnabled(false);
+            toolbar.setNavigationIcon(R.mipmap.arrowback_gray);
+            mIvPoint.setBackgroundResource(R.mipmap.ic_point_gray);
+
         } else {
+            //中间状态
+            Log.e("Magic", "--中间状态--" + verticalOffset);
             ptrFrameLayout.setEnabled(false);
         }
     }
